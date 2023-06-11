@@ -1,5 +1,6 @@
 body {
     background-image: url('/static/images/background.jpg');
+    overflow: hidden;
 }
 
 #orbit {
@@ -30,30 +31,82 @@ body {
     animation: spin 1s infinite linear;
 }
 
-@keyframes wiggle { 
-    0% { transform: skewX(9deg); } 
-    10% { transform: skewX(-8deg); } 
-    20% { transform: skewX(7deg); } 
-    30% { transform: skewX(-6deg); } 
-    40% { transform: skewX(5deg); } 
-    50% { transform: skewX(-4deg); } 
-    60% { transform: skewX(3deg); } 
-    70% { transform: skewX(-2deg); } 
-    80% { transform: skewX(1deg); } 
-    90% { transform: skewX(0deg); } 
-    100% { transform: skewX(0deg); } 
- }
-
  #comet {
     position: absolute;
     width: 150px;
-    top: 25%;
-    left: 25%;
-    animation: streaking 10s linear;
+    top: 0%;
+    left: -20%;
+    animation: comet 40s infinite linear;
  }
 
- @keyframes streaking {
-    0% { transform: rotate(-24deg); top: 0%; left: -20%; }
-    99% { top: 80%; left: 100%; }
-    100% { opacity: 0; }
+ #ufo {
+    position: absolute;
+    width: 100px;
+    top: 0%;
+    left: 105%;
+    animation: ufo 27s infinite linear;
+ }
+
+ @keyframes wiggle { 
+     0% { transform: skewX(9deg); } 
+     10% { transform: skewX(-8deg); } 
+     20% { transform: skewX(7deg); } 
+     30% { transform: skewX(-6deg); } 
+     40% { transform: skewX(5deg); } 
+     50% { transform: skewX(-4deg); } 
+     60% { transform: skewX(3deg); } 
+     70% { transform: skewX(-2deg); } 
+     80% { transform: skewX(1deg); } 
+     90% { transform: skewX(0deg); } 
+     100% { transform: skewX(0deg); } 
+  }
+
+ @keyframes comet {
+    0% {
+        transform: rotate(-10deg); top: 0%; left: -20%;
+    }
+    
+    20% {
+        top: 80%; left: 105%;
+    }
+
+    100% {
+        transform: rotate(-10deg); top: 80%; left: 105%;
+    }
+ }
+
+ @keyframes ufo {
+    0% {
+        top: 0%; left: 105%;
+    }
+    
+    60% {
+        top: 0%; left: 105%;
+        transform: skewX(10deg);
+    }
+
+    62% {
+        transform: skewX(-10deg);
+    }
+
+    64% {
+        transform: skewX(10deg);
+    }
+
+    66% {
+        transform: skewX(-10deg);
+    }
+
+    68% {
+        transform: skewX(10deg);
+    }
+
+    70% {
+        transform: skewX(-10deg);
+        top: 80%; left: -20%;
+    }
+
+    100% {
+        top: 80%; left: -20%;
+    }
  }
