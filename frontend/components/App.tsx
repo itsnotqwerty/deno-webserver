@@ -5,9 +5,9 @@ import Ufo from "./UFO.tsx";
 
 const App = () => {
     return <div id="root">
+        <Ufo />
         <Orbit />
         <Comet />
-        <Ufo />
     </div>
 }
 
