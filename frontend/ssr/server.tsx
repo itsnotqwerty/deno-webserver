@@ -3,7 +3,7 @@ import { ReactDOMServer, React } from "../dep.ts";
 import App from "../components/App.tsx";
 
 const app = new Application();
-const port = 443;
+const port = 8000;
 
 const router = new Router();
 
