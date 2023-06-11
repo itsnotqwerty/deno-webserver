@@ -1,9 +1,10 @@
 import { React } from "../dep.ts";
-import Earth from "./Earth.tsx";
-import Alien from "./Alien.tsx";
+import Orbit from "./Orbit.tsx";
 
 const App = () => {
-    return <div id="root"><Earth /> <Alien /></div>
+    return <div id="root">
+        <Orbit />
+    </div>
 }
 
 export default App;
