@@ -3,7 +3,7 @@ import { ReactDOMServer, React } from "../dep.ts";
 import App from "../components/App.tsx";
 
 const app = new Application();
-const port = 8000;
+const port = 443;
 
 const router = new Router();
 
@@ -41,4 +41,3 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.listen({port});
-console.log(`Server running at http:/localhost:${port}/`);
