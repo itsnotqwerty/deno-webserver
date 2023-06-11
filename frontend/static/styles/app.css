@@ -5,18 +5,15 @@ body {
 
 #orbit {
     position: absolute;
-    top: 55%;
-    left: 50%;
-    margin-top: -86px;
-    margin-left: -350px;
+    top: 55%; left: 50%;
+    margin-top: -86px; margin-left: -350px;
     width: 700px;
-    animation: spin 10s infinite linear;
+    animation: spin 14s infinite linear;
 }
 
 #earth {
     position: absolute;
-    margin-top: -75px;
-    margin-left: 200px; 
+    margin-top: -75px; margin-left: 200px; 
     width: 300px;
     transform: translateZ(0px);
 }
@@ -36,17 +33,23 @@ body {
  #comet {
     position: absolute;
     width: 120px;
-    top: 0%;
-    left: -20%;
-    animation: comet 40s infinite linear;
+    top: 0%; left: -20%;
+    animation: comet 48s infinite linear;
  }
 
  #ufo {
     position: absolute;
     width: 100px;
-    top: 0%;
-    left: 105%;
+    top: 0%; left: 105%;
     animation: ufo 27s infinite linear;
+ }
+
+ #astronaut {
+    position: absolute;
+    width: 60px;
+    top: 50%; left: 50%;
+    margin-top: -35px; margin-left: -30px;
+    animation: astronaut 80s infinite linear;
  }
 
  @keyframes wiggle { 
@@ -65,15 +68,22 @@ body {
 
  @keyframes comet {
     0% {
-        transform: translateZ(20), rotate(-10deg); top: 0%; left: -20%;
+        transform: translateZ(20), rotate(-10deg);
+        top: 0%; left: -20%;
+    }
+
+    16% {
+        opacity: 1;
     }
     
     20% {
         top: 80%; left: 105%;
+        opacity: 0;
     }
 
     100% {
-        transform: translateZ(20), rotate(-10deg); top: 80%; left: 105%;
+        transform: translateZ(20), rotate(-10deg);
+        top: 80%; left: 105%;
     }
  }
 
@@ -85,7 +95,7 @@ body {
     
     60% {
         top: 0%; left: 105%;
-        transform: skewX(10deg);
+        transform: skewX(10deg) rotate(-15deg);
     }
 
     62% {
@@ -93,7 +103,7 @@ body {
     }
 
     64% {
-        transform: skewX(10deg);
+        transform: skewX(10deg) rotate(15deg);
     }
 
     66% {
@@ -101,16 +111,44 @@ body {
     }
 
     68% {
-        transform: skewX(10deg);
+        transform: skewX(10deg) rotate(-15deg);
     }
 
     70% {
         transform: skewX(-10deg);
-        top: 80%; left: -20%;
+        top: 100%; left: -20%;
     }
 
     100% {
-        transform: translateZ(-20);
-        top: 80%; left: -20%;
+        transform: translateZ(-20) rotate(15deg);
+        top: 100%; left: -20%;
+    }
+ }
+
+ @keyframes astronaut {
+    0% {
+        left: 50%;
+    }
+
+    12% {
+        left: 50%;
+        transform: rotate(0deg);
+    }
+
+    18% {
+        left: 20%;
+    }
+
+    24% {
+        left: 20%;
+    }
+
+    30% {
+        left: 50%;
+        transform: rotate(-980deg);
+    }
+
+    100% {
+        left: 50%;
     }
  }
