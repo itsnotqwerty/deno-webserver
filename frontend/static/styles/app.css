@@ -1,0 +1,28 @@
+body {
+    background-image: url('/static/images/background.jpg');
+}
+
+#root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -86px;
+    margin-left: -350px;
+    width: 700px;
+    animation: spin 10s infinite linear;
+}
+
+#earth {
+    position: absolute;
+    margin-top: -75px;
+    margin-left: 200px; 
+    width: 300px;
+    animation: spin 20s infinite linear;
+}
+
+#alien {
+    position: relative;
+    float: right;
+    width: 100px;
+    animation: spin 1s infinite linear;
+}
