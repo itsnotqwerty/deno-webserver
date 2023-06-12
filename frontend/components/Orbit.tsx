@@ -6,7 +6,8 @@ import Astronaut from "./Astronaut.tsx";
 const Orbit = () => {
     return <div id="orbit">
         <Astronaut />
-        <Earth /> <Alien />
+        <Earth />
+        <Alien />
     </div>
 }
 

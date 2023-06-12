@@ -143,5 +143,16 @@
     "https://jspm.dev/react-dom@17.0.2": "965f15a708d0ab8bf33a243b8e9ecfcacbe27c465e7531901ae91a89d17ee128",
     "https://jspm.dev/react-dom@17.0.2/server": "85050d3ff622543ce2ad99da027142b05fd0d2e31d413dc87aa9a4775542dd16",
     "https://jspm.dev/react@17.0.2": "53ed4b705bc2f18cedc569a3035e8ec01614df62e0076ae8b2e559d28bec30d5"
+  },
+  "npm": {
+    "specifiers": {
+      "jquery": "jquery@3.7.0"
+    },
+    "packages": {
+      "jquery@3.7.0": {
+        "integrity": "sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ==",
+        "dependencies": {}
+      }
+    }
   }
 }

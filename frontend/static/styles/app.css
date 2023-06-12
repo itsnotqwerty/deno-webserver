@@ -5,150 +5,167 @@ body {
 
 #orbit {
     position: absolute;
-    top: 55%; left: 50%;
-    margin-top: -86px; margin-left: -350px;
+    top: 50%; left: 50%;
+    margin-left: -350px;
     width: 700px;
     animation: spin 14s infinite linear;
 }
 
-#earth {
+#earthContainer {
     position: absolute;
-    margin-top: -75px; margin-left: 200px; 
-    width: 300px;
-    transform: translateZ(0px);
+    margin-left: 200px; 
+    margin-top: -150px;
 }
 
-#earth:hover {
+#earth {
+    width: 300px;
+}
+
+#earthCtl[type="checkbox"] {
+    opacity: 0;
+}
+
+#earthCtl:checked ~ label > #earth {
     animation: wiggle 1s linear;
 }
 
-#alien {
-    position: relative;
-    float: right;
+#alienContainer {
     margin-right: 60px;
-    height: 100px;
-    animation: spin 2s infinite linear;
 }
 
- #comet {
+#alien {
+    position: absolute;
+    right: 0px; top: -50px;
+    height: 100px;
+    animation: spin 2s infinite linear;
+    z-index: 1;
+}
+
+#alienCtl[type="checkbox"] {
+    opacity: 0;
+}
+
+#alienCtl:checked ~ label > #alien {
+    opacity: 0;
+}
+
+#explosion {
+    position: absolute;
+    right: -20px; top: -75px;
+    height: 150px;
+    opacity: 0;
+    z-index: 2;
+}
+
+#comet {
     position: absolute;
     width: 120px;
     top: 0%; left: -20%;
-    animation: comet 48s infinite linear;
  }
 
- #ufo {
+#ufo {
     position: absolute;
     width: 100px;
     top: 0%; left: 105%;
-    animation: ufo 27s infinite linear;
- }
+}
 
- #astronaut {
+#astronaut {
     position: absolute;
     width: 60px;
     top: 50%; left: 50%;
     margin-top: -35px; margin-left: -30px;
-    animation: astronaut 80s infinite linear;
- }
+}
 
- @keyframes wiggle { 
-     0% { transform: skewX(9deg); } 
-     10% { transform: skewX(-8deg); } 
-     20% { transform: skewX(7deg); } 
-     30% { transform: skewX(-6deg); } 
-     40% { transform: skewX(5deg); } 
-     50% { transform: skewX(-4deg); } 
-     60% { transform: skewX(3deg); } 
-     70% { transform: skewX(-2deg); } 
-     80% { transform: skewX(1deg); } 
-     90% { transform: skewX(0deg); } 
-     100% { transform: skewX(0deg); } 
-  }
+.wiggle-animation {
+    animation: wiggle 1s linear;
+}
 
- @keyframes comet {
+@keyframes wiggle { 
+    0% { transform: skewX(9deg); } 
+    10% { transform: skewX(-8deg); } 
+    20% { transform: skewX(7deg); } 
+    30% { transform: skewX(-6deg); } 
+    40% { transform: skewX(5deg); } 
+    50% { transform: skewX(-4deg); } 
+    60% { transform: skewX(3deg); } 
+    70% { transform: skewX(-2deg); } 
+    80% { transform: skewX(1deg); } 
+    90% { transform: skewX(0deg); } 
+    100% { transform: skewX(0deg); } 
+}
+
+.comet-animation {
+    animation: comet 8s linear;
+}
+
+@keyframes comet {
     0% {
-        transform: translateZ(20), rotate(-10deg);
+        transform: rotate(-10deg);
         top: 0%; left: -20%;
     }
-
-    16% {
+    
+    80% {
         opacity: 1;
     }
-    
-    20% {
+
+    100% {
         top: 80%; left: 105%;
         opacity: 0;
     }
+}
 
-    100% {
-        transform: translateZ(20), rotate(-10deg);
-        top: 80%; left: 105%;
-    }
- }
+.ufo-animation {
+    animation: ufo 4s linear;
+}
 
- @keyframes ufo {
+@keyframes ufo {
     0% {
-        transform: translateZ(-20);
-        top: 0%; left: 105%;
-    }
-    
-    60% {
         top: 0%; left: 105%;
         transform: skewX(10deg) rotate(-15deg);
     }
 
-    62% {
+    20% {
         transform: skewX(-10deg);
     }
 
-    64% {
+    40% {
         transform: skewX(10deg) rotate(15deg);
     }
 
-    66% {
+    60% {
         transform: skewX(-10deg);
     }
 
-    68% {
+    80% {
         transform: skewX(10deg) rotate(-15deg);
     }
 
-    70% {
+    100% {
         transform: skewX(-10deg);
         top: 100%; left: -20%;
     }
+}
 
-    100% {
-        transform: translateZ(-20) rotate(15deg);
-        top: 100%; left: -20%;
-    }
- }
+.astronaut-animation {
+    animation: astronaut 16s linear;
+}
 
- @keyframes astronaut {
+@keyframes astronaut {
     0% {
-        left: 50%;
-    }
-
-    12% {
         left: 50%;
         transform: rotate(0deg);
     }
 
-    18% {
+    25% {
         left: 20%;
     }
 
-    24% {
+    75% {
         left: 20%;
-    }
-
-    30% {
-        left: 50%;
-        transform: rotate(-980deg);
     }
 
     100% {
         left: 50%;
+        transform: rotate(-980deg);
     }
- }
+}

@@ -1,7 +1,10 @@
 import { React } from "../dep.ts";
 
 const Comet = () => {
-    return <img src="/static/images/comet.png" id="comet" alt="comet" />
+    return <div>
+        <img src="/static/images/comet.png" id="comet" alt="comet" />
+        <audio id="cometAudio" src="/static/audio/comet.mp3"></audio>
+    </div>
 }
 
 export default Comet;
