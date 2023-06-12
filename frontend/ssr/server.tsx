@@ -1,4 +1,5 @@
 import { Application, Router, send } from "oak";
+import { CORS } from "oak-cors";
 import React from "react-dom";
 import { h } from "preact";
 import { renderToString } from "preact-render-to-string";
@@ -19,7 +20,7 @@ router.get("/", (context) => {
             <title>Area 51</title>
             <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
             <link href="/static/styles/app.css" rel="stylesheet">
-            <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		</head>
         <body>
             ${renderToString(<App />)}
@@ -93,6 +94,7 @@ router.all("/static/audio/:audio", async (context) => {
     })
 });
 
+app.use(CORS());
 app.use(router.routes());
 app.use(router.allowedMethods());
 

@@ -1,4 +1,5 @@
 import React from "react-dom"; 
+import { h } from "preact";
 import Earth from "./Earth.tsx";
 import Alien from "./Alien.tsx";
 import Astronaut from "./Astronaut.tsx";

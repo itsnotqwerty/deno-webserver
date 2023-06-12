@@ -1,4 +1,5 @@
 import React from "react-dom"; 
+import { h } from "preact";
 
 const Astronaut = () => {
     return <div id="astronautContainer">
