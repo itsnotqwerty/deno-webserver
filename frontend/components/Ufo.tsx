@@ -1,4 +1,4 @@
-import { React } from "../dep.ts";
+import React from "react-dom"; 
 
 const Ufo = () => {
     return <div id="ufoContainer">

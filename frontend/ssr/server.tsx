@@ -1,5 +1,7 @@
-import { Application, Router, send } from "https://deno.land/x/oak@v12.5.0/mod.ts";
-import { ReactDOMServer, React } from "../dep.ts";
+import { Application, Router, send } from "oak";
+import React from "react-dom";
+import { h } from "preact";
+import { renderToString } from "preact-render-to-string";
 import App from "../components/App.tsx";
 
 const app = new Application();
@@ -20,7 +22,7 @@ router.get("/", (context) => {
             <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		</head>
         <body>
-            ${ReactDOMServer.renderToString(<App />)}
+            ${renderToString(<App />)}
             <script>
             $('#earth').on('click', () => {
                 $('#bonkAudio')[0].play();

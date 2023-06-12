@@ -1,0 +1,11 @@
+{
+    "imports": {
+        "oak": "https://deno.land/x/oak@v11.1.0/mod.ts",
+        "preact": "https://esm.sh/preact@10.11.2",
+        "preact/": "https://esm.sh/preact@10.11.2/",
+        "router": "https://esm.sh/preact-router@4.1.0",
+        "preact-render-to-string": "https://esm.sh/*preact-render-to-string@5.2.4",
+        "react-dom": "https://esm.sh/preact@10.11.2/compat",
+        "react-dom/": "https://esm.sh/preact@10.11.2/compat/"
+    }
+}

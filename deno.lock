@@ -146,11 +146,27 @@
   },
   "npm": {
     "specifiers": {
-      "jquery": "jquery@3.7.0"
+      "jquery": "jquery@3.7.0",
+      "preact-render-to-string": "preact-render-to-string@6.1.0_preact@10.15.1"
     },
     "packages": {
       "jquery@3.7.0": {
         "integrity": "sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ==",
+        "dependencies": {}
+      },
+      "preact-render-to-string@6.1.0_preact@10.15.1": {
+        "integrity": "sha512-/AsKU4Q4R8r4aKwwNQrkQQNUVEDmTeZr6IwesDffobFRPcTk4dSQrfo1VOcXjtlcUss6QYEe7JShUGbQIhaw+A==",
+        "dependencies": {
+          "preact": "preact@10.15.1",
+          "pretty-format": "pretty-format@3.8.0"
+        }
+      },
+      "preact@10.15.1": {
+        "integrity": "sha512-qs2ansoQEwzNiV5eAcRT1p1EC/dmEzaATVDJNiB3g2sRDWdA7b7MurXdJjB2+/WQktGWZwxvDrnuRFbWuIr64g==",
+        "dependencies": {}
+      },
+      "pretty-format@3.8.0": {
+        "integrity": "sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==",
         "dependencies": {}
       }
     }

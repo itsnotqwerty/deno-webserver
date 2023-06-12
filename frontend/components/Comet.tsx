@@ -1,4 +1,4 @@
-import { React } from "../dep.ts";
+import React from "react-dom"; 
 
 const Comet = () => {
     return <div>

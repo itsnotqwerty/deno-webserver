@@ -1,4 +1,4 @@
-import { React } from "../dep.ts";
+import React from "react-dom"; 
 
 const Earth = () => {
     return <div id="earthContainer">
