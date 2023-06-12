@@ -1,9 +1,8 @@
-import { Application, Context, Router, send } from "https://deno.land/x/oak@v12.5.0/mod.ts";
+import { Application, Router, send } from "https://deno.land/x/oak@v12.5.0/mod.ts";
 import { ReactDOMServer, React } from "../dep.ts";
 import App from "../components/App.tsx";
 
 const app = new Application();
-const port = 8000;
 
 const router = new Router();
 
@@ -15,6 +14,7 @@ router.get("/", (context) => {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Area 51</title>
             <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
             <link href="/static/styles/app.css" rel="stylesheet">
             <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -94,4 +94,4 @@ router.all("/static/audio/:audio", async (context) => {
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-app.listen({port});
+await app.listen({port: 8000});
