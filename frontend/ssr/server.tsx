@@ -94,6 +94,12 @@ router.all("/static/audio/:audio", async (context) => {
     })
 });
 
+router.get("/favicon.ico", async (context) => {
+    await send(context, 'favicon.ico', {
+        root: `${Deno.cwd()}/frontend/static/`
+    })
+});
+
 app.use(CORS());
 app.use(router.routes());
 app.use(router.allowedMethods());
