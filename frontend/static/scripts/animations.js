@@ -16,7 +16,7 @@ $('#alienCtl').on('click', () => {
     }, 500);
     setTimeout(() => {
         $('#alienCtl').prop('checked', false);
-    }, 5000);
+    }, 4000);
 });
 
 setInterval(() => {
