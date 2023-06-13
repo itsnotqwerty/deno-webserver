@@ -21,7 +21,6 @@ $('#alienCtl').on('click', () => {
 
 function cometTimer(delay) {
     setTimeout(() => {
-        console.log("Animating comet...");
         $('#comet').addClass('comet-animation');
         setTimeout(() => {
             $('#cometAudio')[0].play();
@@ -31,13 +30,11 @@ function cometTimer(delay) {
         }, 8000);
         cometTimer(40000 + (Math.random() * 8000));
     }, delay);
-    console.log(`Set comet delay: ${Math.floor(delay)}`);
 }
 cometTimer(40000 + (Math.random() * 8000));
 
 function ufoTimer(delay) {
     setTimeout(() => {
-        console.log("Animating ufo...");
         $('#ufo').addClass('ufo-animation');
         setTimeout(() => {
             $('#ufoAudio')[0].play();
@@ -47,13 +44,11 @@ function ufoTimer(delay) {
         }, 4000);
         ufoTimer(27000 + (Math.random() * 9000));
     }, delay);
-    console.log(`Set ufo delay: ${Math.floor(delay)}`);
 }
 ufoTimer(26000 + (Math.random() * 5000));
 
 function astronautTimer(delay) {
     setTimeout(() => {
-        console.log("Animating astronaut...");
         $('#astronaut').addClass('astronaut-animation');
         setTimeout(() => {
             $('#astronautAudio')[0].play();
@@ -63,7 +58,6 @@ function astronautTimer(delay) {
         }, 16000);
         astronautTimer(60000 + (Math.random() * 40000));
     }, delay);
-    console.log(`Set astronaut delay: ${Math.floor(delay)}`);
 }
 astronautTimer(60000 + (Math.random() * 40000));
 
