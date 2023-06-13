@@ -19,35 +19,53 @@ $('#alienCtl').on('click', () => {
     }, 4000);
 });
 
-setInterval(() => {
-    $('#comet').addClass('comet-animation');
+function cometTimer(delay) {
     setTimeout(() => {
-        $('#cometAudio')[0].play();
-    }, 800);
-    setTimeout(() => {
-        $('#comet').removeClass('comet-animation');
-    }, 8000);
-}, 47000);
+        console.log("Animating comet...");
+        $('#comet').addClass('comet-animation');
+        setTimeout(() => {
+            $('#cometAudio')[0].play();
+        }, 800);
+        setTimeout(() => {
+            $('#comet').removeClass('comet-animation');
+        }, 8000);
+        cometTimer(40000 + (Math.random() * 8000));
+    }, delay);
+    console.log(`Set comet delay: ${Math.floor(delay)}`);
+}
+cometTimer(40000 + (Math.random() * 8000));
 
-setInterval(() => {
-    $('#ufo').addClass('ufo-animation');
+function ufoTimer(delay) {
     setTimeout(() => {
-        $('#ufoAudio')[0].play();
-    }, 600);
-    setTimeout(() => {
-        $('#ufo').removeClass('ufo-animation');
-    }, 4000);
-}, 27000);
+        console.log("Animating ufo...");
+        $('#ufo').addClass('ufo-animation');
+        setTimeout(() => {
+            $('#ufoAudio')[0].play();
+        }, 600);
+        setTimeout(() => {
+            $('#ufo').removeClass('ufo-animation');
+        }, 4000);
+        ufoTimer(27000 + (Math.random() * 9000));
+    }, delay);
+    console.log(`Set ufo delay: ${Math.floor(delay)}`);
+}
+ufoTimer(26000 + (Math.random() * 5000));
 
-setInterval(() => {
-    $('#astronaut').addClass('astronaut-animation');
+function astronautTimer(delay) {
     setTimeout(() => {
-        $('#astronautAudio')[0].play();
-    }, 1200);
-    setTimeout(() => {
-        $('#astronaut').removeClass('astronaut-animation');
-    }, 16000);
-}, 80000);
+        console.log("Animating astronaut...");
+        $('#astronaut').addClass('astronaut-animation');
+        setTimeout(() => {
+            $('#astronautAudio')[0].play();
+        }, 1200);
+        setTimeout(() => {
+            $('#astronaut').removeClass('astronaut-animation');
+        }, 16000);
+        astronautTimer(60000 + (Math.random() * 40000));
+    }, delay);
+    console.log(`Set astronaut delay: ${Math.floor(delay)}`);
+}
+astronautTimer(60000 + (Math.random() * 40000));
 
 function getPositions(element) {
     const pos = element.offset();
@@ -72,7 +90,7 @@ function checkCollisions(){
     const ufoHorizontalMatch = comparePositions(alien[0], ufo[0]);
     const ufoVerticalMatch = comparePositions(alien[1], ufo[1]);       
     const match = (cometHorizontalMatch && cometVerticalMatch) || (ufoHorizontalMatch && ufoVerticalMatch);
-    if (match) { $("#alienCtl").click(); }
+    if (match) { $("#alienCtl").click(); console.log("Collision detected"); }
 }
 
 setInterval(checkCollisions, 200);
