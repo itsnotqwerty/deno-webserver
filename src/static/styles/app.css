@@ -6,26 +6,25 @@ body {
 #orbit {
     position: absolute;
     top: 50%; left: 50%;
-    margin-left: -350px;
-    width: 700px;
+    margin-left: -35vh;
+    width: 70vh;
     animation: spin 14s infinite linear;
 }
 
 #audioMenu {
     position: absolute;
-    bottom: 0%;
-    left: 0%;
+    bottom: 0%; left: 0%;
     color: white;
 }
 
 #earthContainer {
     position: absolute;
-    margin-left: 200px; 
-    margin-top: -150px;
+    margin-left: 20vh; 
+    margin-top: -15vh;
 }
 
 #earth {
-    width: 300px;
+    width: 30vh;
 }
 
 #earthCtl[type="checkbox"] {
@@ -37,13 +36,13 @@ body {
 }
 
 #alienContainer {
-    margin-right: 60px;
+    margin-right: 6vh;
 }
 
 #alien {
     position: absolute;
-    right: 0px; top: -50px;
-    height: 100px;
+    right: 0vh; top: -5vh;
+    height: 10vh;
     animation: spin 2s infinite linear;
     z-index: 1;
 }
@@ -58,27 +57,27 @@ body {
 
 #explosion {
     position: absolute;
-    right: -20px; top: -75px;
-    height: 150px;
+    right: -2vh; top: -7vh;
+    height: 15vh;
     opacity: 0;
     z-index: 2;
 }
 
 #comet {
     position: absolute;
-    width: 120px;
-    top: 0%; left: -20%;
+    width: 12vh;
+    top: 0vh; left: -20vh;
  }
 
 #ufo {
     position: absolute;
-    width: 100px;
-    top: 0%; left: 105%;
+    width: 10vh;
+    top: 0vh; left: 105vh;
 }
 
 #astronaut {
     position: absolute;
-    width: 60px;
+    width: 6vh;
     top: 50%; left: 50%;
     margin-top: -35px; margin-left: -30px;
 }
