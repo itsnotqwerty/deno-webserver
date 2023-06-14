@@ -1,27 +1,8 @@
-const cometAudio = new Howl({
-    src: ['static/audio/comet.mp3'],
-    autoplay: false,
-});
-
-const ufoAudio = new Howl({
-    src: ['static/audio/ufo.mp3'],
-    autoplay: false
-});
-
-const astronautAudio = new Howl({
-    src: ['static/audio/astronaut.mp3'],
-    autoplay: false
-});
-
-const explosionAudio = new Howl({
-    src: ['static/audio/explosion.mp3'],
-    autoplay: false
-});
-
-const bonkAudio = new Howl({
-    src: ['static/audio/bonk.mp3'],
-    autoplay: false
-});
+const cometAudio = new Howl({ src: ['static/audio/comet.mp3'], autoplay: false });
+const ufoAudio = new Howl({ src: ['static/audio/ufo.mp3'], autoplay: false });
+const astronautAudio = new Howl({ src: ['static/audio/astronaut.mp3'], autoplay: false });
+const explosionAudio = new Howl({ src: ['static/audio/explosion.mp3'], autoplay: false });
+const bonkAudio = new Howl({ src: ['static/audio/bonk.mp3'], autoplay: false });
 
 let alienOnCooldown = false;
 
@@ -49,7 +30,7 @@ $('#alienCtl').on('click', () => {
     }, 4000);
 });
 
-function createAnimationTimer(target, d, dt, a, at) {
+function createAnimationTimer(target, d, dt, k, a, at) {
     function timerFactory(delay) {
         setTimeout(() => {
             $(`#${target}`).addClass(`${target}-animation`);
@@ -58,16 +39,16 @@ function createAnimationTimer(target, d, dt, a, at) {
             }, at);
             setTimeout(() => {
                 $(`#${target}`).removeClass(`${target}-animation`);
-            }, 8000);
+            }, k);
             timerFactory(d + (Math.random() * dt));
         }, delay);
     }
     timerFactory(d + (Math.random() * dt));
 }
 
-createAnimationTimer('comet', 40000, 8000, cometAudio, 800);
-createAnimationTimer('ufo', 26000, 5000, ufoAudio, 600);
-createAnimationTimer('astronaut', 60000, 40000, astronautAudio, 1200);
+createAnimationTimer('comet', 40000, 8000, 8000, cometAudio, 800);
+createAnimationTimer('ufo', 23000, 9000, 4000, ufoAudio, 600);
+createAnimationTimer('astronaut', 60000, 40000, 16000, astronautAudio, 1200);
 
 function getPositions(element) {
     const pos = element.offset();
