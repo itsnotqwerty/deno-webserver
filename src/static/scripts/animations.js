@@ -49,47 +49,25 @@ $('#alienCtl').on('click', () => {
     }, 4000);
 });
 
-function cometTimer(delay) {
-    setTimeout(() => {
-        $('#comet').addClass('comet-animation');
+function createAnimationTimer(target, d, dt, a, at) {
+    function timerFactory(delay) {
         setTimeout(() => {
-            cometAudio.play();
-        }, 800);
-        setTimeout(() => {
-            $('#comet').removeClass('comet-animation');
-        }, 8000);
-        cometTimer(40000 + (Math.random() * 8000));
-    }, delay);
+            $(`#${target}`).addClass(`${target}-animation`);
+            setTimeout(() => {
+                a.play();
+            }, at);
+            setTimeout(() => {
+                $(`#${target}`).removeClass(`${target}-animation`);
+            }, 8000);
+            timerFactory(d + (Math.random() * dt));
+        }, delay);
+    }
+    timerFactory(d + (Math.random() * dt));
 }
-cometTimer(40000 + (Math.random() * 8000));
 
-function ufoTimer(delay) {
-    setTimeout(() => {
-        $('#ufo').addClass('ufo-animation');
-        setTimeout(() => {
-            ufoAudio.play();
-        }, 600);
-        setTimeout(() => {
-            $('#ufo').removeClass('ufo-animation');
-        }, 4000);
-        ufoTimer(27000 + (Math.random() * 9000));
-    }, delay);
-}
-ufoTimer(26000 + (Math.random() * 5000));
-
-function astronautTimer(delay) {
-    setTimeout(() => {
-        $('#astronaut').addClass('astronaut-animation');
-        setTimeout(() => {
-            astronautAudio.play();
-        }, 1200);
-        setTimeout(() => {
-            $('#astronaut').removeClass('astronaut-animation');
-        }, 16000);
-        astronautTimer(60000 + (Math.random() * 40000));
-    }, delay);
-}
-astronautTimer(60000 + (Math.random() * 40000));
+createAnimationTimer('comet', 40000, 8000, cometAudio, 800);
+createAnimationTimer('ufo', 26000, 5000, ufoAudio, 600);
+createAnimationTimer('astronaut', 60000, 40000, astronautAudio, 1200);
 
 function getPositions(element) {
     const pos = element.offset();
