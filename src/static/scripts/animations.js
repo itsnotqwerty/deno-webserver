@@ -1,11 +1,36 @@
+const cometAudio = new Howl({
+    src: ['static/audio/comet.mp3'],
+    autoplay: false,
+});
+
+const ufoAudio = new Howl({
+    src: ['static/audio/ufo.mp3'],
+    autoplay: false
+});
+
+const astronautAudio = new Howl({
+    src: ['static/audio/astronaut.mp3'],
+    autoplay: false
+});
+
+const explosionAudio = new Howl({
+    src: ['static/audio/explosion.mp3'],
+    autoplay: false
+});
+
+const bonkAudio = new Howl({
+    src: ['static/audio/bonk.mp3'],
+    autoplay: false
+});
+
 $('#earth').on('click', () => {
-    $('#bonkAudio')[0].play();
+    bonkAudio.play();
     $('#earthCtl').prop('checked', false);
 });
 
 $('#alienCtl').on('click', () => {
     $('#alienCtl').prop('checked', true);
-    $('#explosionAudio')[0].play();
+    explosionAudio.play();
     $('#explosion').animate({
         'opacity': '1'
     });
@@ -23,7 +48,7 @@ function cometTimer(delay) {
     setTimeout(() => {
         $('#comet').addClass('comet-animation');
         setTimeout(() => {
-            $('#cometAudio')[0].play();
+            cometAudio.play();
         }, 800);
         setTimeout(() => {
             $('#comet').removeClass('comet-animation');
@@ -37,7 +62,7 @@ function ufoTimer(delay) {
     setTimeout(() => {
         $('#ufo').addClass('ufo-animation');
         setTimeout(() => {
-            $('#ufoAudio')[0].play();
+            ufoAudio.play();
         }, 600);
         setTimeout(() => {
             $('#ufo').removeClass('ufo-animation');
@@ -51,7 +76,7 @@ function astronautTimer(delay) {
     setTimeout(() => {
         $('#astronaut').addClass('astronaut-animation');
         setTimeout(() => {
-            $('#astronautAudio')[0].play();
+            astronautAudio.play();
         }, 1200);
         setTimeout(() => {
             $('#astronaut').removeClass('astronaut-animation');

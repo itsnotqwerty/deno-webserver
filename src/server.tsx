@@ -6,8 +6,8 @@ import { renderToString } from "preact-render-to-string";
 import App from "./components/App.tsx";
 
 const app = new Application();
-
 const router = new Router();
+const staticDir = `${Deno.cwd()}/src/static`;
 
 router.get("/", (context) => {
     context.response.body =
@@ -35,31 +35,31 @@ router.get("/", (context) => {
 
 router.all("/static/images/:image", async (context) => {
     await send(context, context.params.image, {
-        root: `${Deno.cwd()}/frontend/static/images`
+        root: `${staticDir}/images`
     })
 });
 
 router.all("/static/styles/:style", async (context) => {
     await send(context, context.params.style, {
-        root: `${Deno.cwd()}/frontend/static/styles`
+        root: `${staticDir}/styles`
     })
 });
 
 router.all("/static/audio/:audio", async (context) => {
     await send(context, context.params.audio, {
-        root: `${Deno.cwd()}/frontend/static/audio`
+        root: `${staticDir}/audio`
     })
 });
 
 router.all("/static/scripts/:script", async (context) => {
     await send(context, context.params.script, {
-        root: `${Deno.cwd()}/frontend/static/scripts`
+        root: `${staticDir}/scripts`
     });
 });
 
 router.get("/favicon.ico", async (context) => {
     await send(context, 'favicon.ico', {
-        root: `${Deno.cwd()}/frontend/static/`
+        root: `${staticDir}`
     })
 });
 

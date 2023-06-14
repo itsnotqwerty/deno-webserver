@@ -1,10 +1,10 @@
-const space = new Howl({
+const spaceAudio = new Howl({
     src: ['static/audio/space.ogg'],
     autoplay: false,
     loop: true
 });
 
-space.play();
+spaceAudio.play();
 
 let globalMute = false;
 let globalVolume = 100;
