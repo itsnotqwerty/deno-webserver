@@ -23,14 +23,17 @@ const bonkAudio = new Howl({
     autoplay: false
 });
 
+let alienOnCooldown = false;
+
 $('#earth').on('click', () => {
     bonkAudio.play();
     $('#earthCtl').prop('checked', false);
 });
 
 $('#alienCtl').on('click', () => {
-    if ($('#alienCtl').prop('checked')) { return; }
     $('#alienCtl').prop('checked', true);
+    if (alienOnCooldown) { return; }
+    alienOnCooldown = true;
     explosionAudio.play();
     $('#explosion').animate({
         'opacity': '1'
@@ -42,6 +45,7 @@ $('#alienCtl').on('click', () => {
     }, 500);
     setTimeout(() => {
         $('#alienCtl').prop('checked', false);
+        alienOnCooldown = false;
     }, 4000);
 });
 
