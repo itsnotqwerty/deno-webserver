@@ -1,6 +1,6 @@
 {
     "tasks": {
-        "build": "deno compile --allow-read --allow-net ./frontend/ssr/server.tsx"
+        "build": "deno compile --allow-read --allow-net ./src/server.tsx"
     },
     "importMap": "import_map.json",
     "compilerOptions": {

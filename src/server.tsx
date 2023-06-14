@@ -3,7 +3,7 @@ import { CORS } from "oak-cors";
 import React from "react-dom";
 import { h } from "preact";
 import { renderToString } from "preact-render-to-string";
-import App from "../components/App.tsx";
+import App from "./components/App.tsx";
 
 const app = new Application();
 
