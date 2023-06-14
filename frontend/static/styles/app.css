@@ -11,6 +11,13 @@ body {
     animation: spin 14s infinite linear;
 }
 
+#audioMenu {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    color: white;
+}
+
 #earthContainer {
     position: absolute;
     margin-left: 200px; 
