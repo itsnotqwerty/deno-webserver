@@ -1,0 +1,93 @@
+.wiggle-animation {
+    animation: wiggle 1s linear;
+}
+
+@keyframes wiggle { 
+    0% { transform: skewX(9deg); } 
+    10% { transform: skewX(-8deg); } 
+    20% { transform: skewX(7deg); } 
+    30% { transform: skewX(-6deg); } 
+    40% { transform: skewX(5deg); } 
+    50% { transform: skewX(-4deg); } 
+    60% { transform: skewX(3deg); } 
+    70% { transform: skewX(-2deg); } 
+    80% { transform: skewX(1deg); } 
+    90% { transform: skewX(0deg); } 
+    100% { transform: skewX(0deg); } 
+}
+
+.comet-animation {
+    animation: comet 8s linear;
+}
+
+@keyframes comet {
+    0% {
+        transform: rotate(-10deg);
+        top: 0%; left: -20%;
+    }
+    
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 80%; left: 105%;
+        opacity: 0;
+    }
+}
+
+.ufo-animation {
+    animation: ufo 4s linear;
+}
+
+@keyframes ufo {
+    0% {
+        top: 0%; left: 105%;
+        transform: skewX(10deg) rotate(-15deg);
+    }
+
+    20% {
+        transform: skewX(-10deg);
+    }
+
+    40% {
+        transform: skewX(10deg) rotate(15deg);
+    }
+
+    60% {
+        transform: skewX(-10deg);
+    }
+
+    80% {
+        transform: skewX(10deg) rotate(-15deg);
+    }
+
+    100% {
+        transform: skewX(-10deg);
+        top: 100%; left: -20%;
+    }
+}
+
+.astronaut-animation {
+    animation: astronaut 16s linear;
+}
+
+@keyframes astronaut {
+    0% {
+        left: 50%;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        left: 20%;
+    }
+
+    75% {
+        left: 20%;
+    }
+
+    100% {
+        left: 50%;
+        transform: rotate(-980deg);
+    }
+}

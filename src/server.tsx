@@ -39,22 +39,10 @@ router.all("/static/images/:image", async (context) => {
     })
 });
 
-router.all("/static/styles/:style", async (context) => {
-    await send(context, context.params.style, {
-        root: `${staticDir}/styles`
+router.all("/static/:route/:item", async (context) => {
+    await send(context, context.params.item, {
+        root: `${staticDir}/${context.params.route}`
     })
-});
-
-router.all("/static/audio/:audio", async (context) => {
-    await send(context, context.params.audio, {
-        root: `${staticDir}/audio`
-    })
-});
-
-router.all("/static/scripts/:script", async (context) => {
-    await send(context, context.params.script, {
-        root: `${staticDir}/scripts`
-    });
 });
 
 router.get("/favicon.ico", async (context) => {
