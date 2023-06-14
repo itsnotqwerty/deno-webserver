@@ -29,6 +29,7 @@ $('#earth').on('click', () => {
 });
 
 $('#alienCtl').on('click', () => {
+    if ($('#alienCtl').prop('checked')) { return; }
     $('#alienCtl').prop('checked', true);
     explosionAudio.play();
     $('#explosion').animate({
