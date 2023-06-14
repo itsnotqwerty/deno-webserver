@@ -33,12 +33,6 @@ router.get("/", (context) => {
         `;
 });
 
-router.all("/static/images/:image", async (context) => {
-    await send(context, context.params.image, {
-        root: `${staticDir}/images`
-    })
-});
-
 router.all("/static/:route/:item", async (context) => {
     await send(context, context.params.item, {
         root: `${staticDir}/${context.params.route}`
