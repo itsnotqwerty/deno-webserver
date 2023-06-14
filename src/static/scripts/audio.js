@@ -9,7 +9,7 @@ spaceAudio.play();
 let globalMute = false;
 let globalVolume = 100;
 
-$('#audioMute').on('click', () => {
+$('#audio-mute').on('click', () => {
     if (globalMute) {
         Howler.volume(globalVolume / 100);
         globalMute = false;
@@ -22,8 +22,8 @@ $('#audioMute').on('click', () => {
 
 setInterval(() => {
     if (globalMute) { return };
-    if (globalVolume != $('#audioRange').val()) {
-        globalVolume = $('#audioRange').val();
+    if (globalVolume != $('#audio-range').val()) {
+        globalVolume = $('#audio-range').val();
         Howler.volume(globalVolume / 100);
     }
 }, 200);

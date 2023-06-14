@@ -8,11 +8,11 @@ let alienOnCooldown = false;
 
 $('#earth').on('click', () => {
     bonkAudio.play();
-    $('#earthCtl').prop('checked', false);
+    $('#earth-controls').prop('checked', false);
 });
 
-$('#alienCtl').on('click', () => {
-    $('#alienCtl').prop('checked', true);
+$('#alien-controls').on('click', () => {
+    $('#alien-controls').prop('checked', true);
     if (alienOnCooldown) { return; }
     alienOnCooldown = true;
     explosionAudio.play();
@@ -25,7 +25,7 @@ $('#alienCtl').on('click', () => {
         });
     }, 500);
     setTimeout(() => {
-        $('#alienCtl').prop('checked', false);
+        $('#alien-controls').prop('checked', false);
         alienOnCooldown = false;
     }, 4000);
 });
@@ -73,7 +73,7 @@ function checkCollisions(){
     const ufoHorizontalMatch = comparePositions(alien[0], ufo[0]);
     const ufoVerticalMatch = comparePositions(alien[1], ufo[1]);       
     const match = (cometHorizontalMatch && cometVerticalMatch) || (ufoHorizontalMatch && ufoVerticalMatch);
-    if (match) { $("#alienCtl").click(); console.log("Collision detected"); }
+    if (match) { $("#alien-controls").click(); console.log("Collision detected"); }
 }
 
 setInterval(checkCollisions, 200);

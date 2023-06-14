@@ -2,10 +2,10 @@ import React from "react-dom";
 import { h } from "preact";
 
 const AudioMenu = () => {
-    return <div id="audioMenu">
-        <input type="range" min="0" max="100" value="100" class="slider" id="audioRange" />
-        <input type="checkbox" id="audioMute" />
-        <label htmlFor="audioMute">Mute</label>
+    return <div id="audio-menu">
+        <input type="range" min="0" max="100" value="70" class="slider" id="audio-range" />
+        <input type="checkbox" id="audio-mute" />
+        <label htmlFor="audio-mute">Mute</label>
     </div>
 }
 

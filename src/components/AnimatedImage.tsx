@@ -21,7 +21,7 @@ class AnimatedImage extends Component<Props, State> {
     }
 
     render() {
-        return <div id={`${this.state.name}Container`}>
+        return <div id={`${this.state.name}-container`}>
             <img src={`/static/images/${this.state.img}`} id={this.state.name} alt={this.state.name} />
         </div>;
     }

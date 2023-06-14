@@ -11,13 +11,13 @@ body {
     animation: spin 14s infinite linear;
 }
 
-#audioMenu {
+#audio-menu {
     position: absolute;
     bottom: 0%; left: 0%;
     color: white;
 }
 
-#earthContainer {
+#earth-container {
     position: absolute;
     margin-left: 20vh; 
     margin-top: -15vh;
@@ -27,15 +27,15 @@ body {
     width: 30vh;
 }
 
-#earthCtl[type="checkbox"] {
+#earth-controls[type="checkbox"] {
     opacity: 0;
 }
 
-#earthCtl:checked ~ label > #earth {
+#earth-controls:checked ~ label > #earth {
     animation: wiggle 1s linear;
 }
 
-#alienContainer {
+#alien-container {
     margin-right: 6vh;
 }
 
@@ -44,14 +44,13 @@ body {
     right: 0vh; top: -5vh;
     height: 10vh;
     animation: spin 2s infinite linear;
-    z-index: 1;
 }
 
-#alienCtl[type="checkbox"] {
+#alien-controls[type="checkbox"] {
     opacity: 0;
 }
 
-#alienCtl:checked ~ label > #alien {
+#alien-controls:checked ~ label > #alien {
     opacity: 0;
 }
 
@@ -60,7 +59,6 @@ body {
     right: -2vh; top: -7vh;
     height: 15vh;
     opacity: 0;
-    z-index: 2;
 }
 
 #comet {
