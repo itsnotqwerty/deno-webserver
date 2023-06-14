@@ -1,16 +1,15 @@
 import React from "react-dom";
 import { h } from "preact";
 
-import Comet from "./Comet.tsx";
 import Orbit from "./Orbit.tsx";
-import Ufo from "./Ufo.tsx";
 import AudioMenu from "./AudioMenu.tsx";
+import AnimatedImage from "./AnimatedImage.tsx";
 
 const App = () => {
     return <div id="app">
-        <Ufo />
+        <AnimatedImage name="ufo" img="ufo.png" />
         <Orbit />
-        <Comet />
+        <AnimatedImage name="comet" img="comet.png" />
         <AudioMenu />
     </div>
 }
